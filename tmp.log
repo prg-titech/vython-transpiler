@@ -1,0 +1,73 @@
+[Vython AST]
+Tree(Token('RULE', 'file_input'), [Tree(Token('RULE', 'classdef'), [Tree(Token('RULE', 'name'), [Token('NAME', 'A')]), Tree(Token('RULE', 'version'), [Token('__ANON_25', '1')]), None, Tree(Token('RULE', 'suite'), [Tree(Token('RULE', 'funcdef'), [Tree(Token('RULE', 'name'), [Token('NAME', '__init__')]), Tree(Token('RULE', 'parameters'), [Tree(Token('RULE', 'name'), [Token('NAME', 'self')]), None, None]), None, Tree(Token('RULE', 'suite'), [Tree(Token('RULE', 'pass_stmt'), [])])])])])])
+
+[IR AST]
+Module(body=[ClassDef(name=Name(id='A', version=Version(version='1')), bases=[], body=[FunctionDef(name=Name(id='__init__', version=None), args=[Name(id='self', version=None)], body=[Pass()])])])
+
+[Python AST]
+Module(
+    [
+        ClassDef(
+            'A_v_1',
+            [],
+            [],
+            [
+                FunctionDef(
+                    '__init__',
+                    arguments(
+                        [],
+                        [
+                            arg('self')],
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        defaults=[]),
+                    [
+                        Pass()],
+                    [],
+                    type_params=[])],
+            [],
+            [])],
+    [])
+
+[Python AST-compare]
+Module(
+    [
+        ClassDef(
+            'A_1',
+            [],
+            [],
+            [
+                FunctionDef(
+                    '__init__',
+                    arguments(
+                        [],
+                        [
+                            arg(
+                                'self',
+                                lineno=2,
+                                col_offset=17,
+                                end_lineno=2,
+                                end_col_offset=21)],
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        defaults=[]),
+                    [
+                        Pass(
+                            lineno=3,
+                            col_offset=8,
+                            end_lineno=3,
+                            end_col_offset=12)],
+                    [],
+                    type_params=[],
+                    lineno=2,
+                    col_offset=4,
+                    end_lineno=3,
+                    end_col_offset=12)],
+            [],
+            [],
+            lineno=1,
+            col_offset=0,
+            end_lineno=3,
+            end_col_offset=12)],
+    [])
+
